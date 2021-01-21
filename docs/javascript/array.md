@@ -53,7 +53,7 @@ const list = [1, 2, 3, 4, 5]
 const flag = list.some(item => item > 3) //true
 ```
 
-##every
+## every
 
 every() 方法使用指定函数检测数组中的所有元素
 
