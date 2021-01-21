@@ -1,6 +1,5 @@
 ---
-id:array 
-title:Style Guide
+id:array title:Style Guide
 ---
 
 ## map
@@ -71,6 +70,47 @@ const list = [1, 2, 3, 4, 5]
 const flag = list.every(item => item > 3) //false
 ```
 
+## filter
+
+filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
+
+:::warning
+
+该方法不会改变原数组。
+
+该方法不会对空数组进行检测。
+
+:::
+
+```js
+const list = [1, 2, 3, 4, 5]
+list.filter(item => item > 3) // [4,5]
+```
+
+##  reduce
+
+reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+
+reduce() 可以作为一个高阶函数，用于函数的 compose。
+
+:::warning
+
+reduce() 对于空数组是不会执行回调函数的。
+
+:::
+
+```js
+const list = [1, 2, 3, 4, 5]
+list.reduce((previousValue, currentValue, currentIndex, array) => previousValue+currentValue, 0)
+//15    
+```
+
+|  参数  |   描述       |  
+| -------- | --------- | 
+| previousValue  | 	必需。初始值, 或者计算结束后的返回值。 | 
+| currentValue       | 	必需。当前元素                   |
+| currentIndex  | 		可选。当前元素的索引   | 
+| array       | 	可选。当前元素所属的数组对象                 |
 
 
 
