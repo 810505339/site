@@ -59,7 +59,9 @@ module.exports = {
 1. 使用`BEM`命名规范(一般用于组件开发)
 
 ### css modules
+
 先进行webpack配置css modules
+
 ```js
 //先 yarn add craco-less 在craco.config.js中  
 const CracoLessPlugin = require('craco-less');
@@ -92,17 +94,48 @@ module.exports = {
 ```less
 /*App.module.less*/
 .color {
-color: pink;
+  color: pink;
 }
 ```
-在App.tsx中使用这个文件
-```tsx
-    import React, {FC} from 'react';
-    import style from './App.module.less'
 
-    const App: FC = () =>  <div className={style.color}>App</div>
+在App.tsx中使用这个文件
+
+```tsx
+import React, {FC} from 'react';
+import style from './App.module.less'
+
+const App: FC = () => <div className={style.color}>App</div>
 ```
-页面就会出现App
+
+当页面出现<span style={{color:'pink'}}>App</span>,说明配置成功!
+
+### styled-components
+
+安装`styled-components`
+
+```markdown
+yarn add styled-components @types/styled-components  
+```
+`@types/styled-components` 是typescript的声明文件。如果不是ts用户,可以不用安装。
+
+```tsx
+import styled from "styled-components";
+import React, {FC} from 'react';
+type Wrap = {
+    color: string
+}
+
+const Wrapper = styled.div`
+  color: ${(props: Wrap) => props.color};
+`
+
+const App: FC = () => <Wrapper color={'pink'}>App</Wrapper>
+```
+当页面出现<span style={{color:'pink'}}>App</span>,说明配置成功!
+
+
+
+
 
 
 
