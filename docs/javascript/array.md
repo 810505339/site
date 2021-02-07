@@ -1,5 +1,6 @@
 ---
-id:array title:Style Guide
+id:array 
+title:Style Guide
 ---
 
 ## map
