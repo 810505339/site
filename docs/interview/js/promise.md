@@ -2,7 +2,7 @@
 
 id:promise
 
-title: promise
+title:promise详情
 
 ---
 
