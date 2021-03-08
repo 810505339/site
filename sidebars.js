@@ -9,6 +9,7 @@ module.exports = {
             'interview/vue/key的作用',
             'interview/js/防抖跟节流',
             'interview/html/圣杯布局',
+            'interview/html/深拷贝和浅拷贝',
         ],
     },
 };
